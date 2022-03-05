@@ -1,0 +1,23 @@
+https://www.figma.com/file/oTI0TFjci4NAEpjo5C6ds6/alivio-landing-page-for-figma?node-id=1%3A3 - link to layout
+
+Ниже прикрепил скриншот с разбивкой макета на логические блоки (разбивка не включает контейнеры)
+Контент секций заворачиваем в контейнер:
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+Конкретно для секции "Let's hear about Kayla's success story" необходимо изменить максимальную ширину контейнера, допустим вы навесите на эту секцию класс с именем "success-story"
+HTML
+
+...
+<section class="success-story">
+  <div class="container">...</div>
+</section>
+CSS
+
+/* переприсваиваем максимальную ширину конкретно для контейнера в этой секции */
+.success-story .container {
+  max-width: 1530px;
+}
+также в секции "Let's hear about Kayla's success story" блок с картинкой можно реализовать элементом video
