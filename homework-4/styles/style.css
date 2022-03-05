@@ -1,0 +1,495 @@
+@import url("fonts.css");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.more-details {
+  position: relative;
+}
+
+.tooltip {
+  display: none;
+  min-width: 200px;
+  padding: 5px;
+  border-radius: 8px;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 100;
+  color: black;
+  font-size: 16px;
+  background-color: rgb(24, 240, 24);
+  box-shadow: 0 0 8px 8px rgba(170, 170, 170, 0.808);
+}
+
+.more-details:hover .tooltip {
+  display: block;
+  margin-top: 10px;
+}
+
+.triangle {
+  display: inline-block;
+  position: absolute;
+  bottom: 100%;
+  left: 10%;
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+  border-bottom: 12px solid rgb(24, 240, 24);
+}
+
+.to-begin {
+  position: fixed;
+  right: 48px;
+  bottom: 48px;
+  font-size: 42px;
+  text-decoration: none;
+  color: rgb(241, 23, 23);
+}
+
+.to-begin:hover {
+  font-size: 56px;
+  color: rgb(24, 240, 24);
+}
+
+.to-begin:active {
+  font-size: 56px;
+  color: rgb(163, 12, 200);
+}
+
+/* -------- HEADER SECTION -------- */
+
+.header {
+  padding: 16px 0;
+  border-bottom: 1px solid #d6d6d6;
+  position: relative;
+  font-size: 0;
+  background-color: #ffffff;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  font-family: "Avenir Next LT Pro-Bold", sans-serif;
+  font-size: 40px;
+  color: #01996d;
+}
+
+.header-logo:hover {
+  text-shadow: 6px 6px 8px black;
+}
+
+.header-nav {
+  margin: 0 15px;
+}
+
+.header-nav .nav-list {
+  display: flex;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.header-nav .nav-item:not(:last-child) {
+  margin-right: 72px;
+}
+
+.header-nav .nav-link,
+.sign-in {
+  font-size: 20px;
+  color: #292929;
+}
+
+.header-nav .nav-link:hover,
+.sign-in:hover {
+  color: #01996d;
+  text-shadow: 3px 3px 4px rgb(112, 112, 112);
+}
+
+.sign-in {
+  margin-right: 35px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 20px 50px;
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #01996d;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 20px rgb(42, 66, 5);
+  background-color: rgb(24, 240, 24);
+  color: blue;
+}
+
+/* -------- HERO SECTION -------- */
+
+.hero {
+  padding: 175px 0 336px;
+  background-color: rgb(204, 241, 199);
+  background-image: url(../images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+}
+
+.hero-content {
+  max-width: 440px;
+  min-height: 384px;
+}
+
+.hero-slogan {
+  margin: 0;
+  font-family: "Georgia-Bold", serif;
+  font-size: 65px;
+  line-height: 74px;
+  color: #01996d;
+}
+
+.hero-text {
+  margin: 30px 0 0;
+  font-size: 20px;
+  line-height: 31px;
+  color: #484848;
+}
+
+.hero-content .btn-primary {
+  margin-top: 52px;
+}
+
+/* -------- WORKS SECTION -------- */
+
+.works {
+  padding: 169px 0 50px;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 24px;
+  color: #424242;
+}
+
+.works-description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.works-slogan {
+  margin: 10px 0 0;
+  flex-basis: 48%;
+  font-family: "Georgia-Bold", serif;
+  font-size: 50px;
+  color: #01996d;
+}
+
+.works-text {
+  margin: 24px 0 0;
+  flex-basis: 47%;
+  font-weight: 500;
+  font-size: 20px;
+  color: #424242;
+}
+
+.works-cards {
+  margin: 0;
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.works-card {
+  max-width: 390px;
+}
+
+.works-card--shifted-bottom {
+  margin-top: 206px;
+}
+
+.works-card-title {
+  margin: 52px 0 0;
+  padding: 99px 0px 0px 77px;
+  position: relative;
+}
+
+.card-title-number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 150px;
+  font-family: "Georgia", sans-serif;
+  font-size: 150px;
+  font-weight: normal;
+  color: rgba(1, 153, 109, 0.2);
+}
+
+.card-title-text {
+  position: relative;
+  z-index: 1;
+  font-family: "Georgia-Bold", serif;
+  font-size: 30px;
+  color: #000000;
+}
+
+.works-card-text {
+  margin: 55px 0 0;
+  font-size: 20px;
+  color: #424242;
+}
+
+/* I installed "margin-top" for all images 48px
+ instead of (60px, 37px, 48px) on figma-example.
+ I think it will be more readable. */
+z .works-card-img {
+  margin: 48px 0 0;
+  width: 100%;
+}
+
+/* -------- SUCCESS STORY SECTION -------- */
+
+.success-story {
+  padding: 229px 0px 176px;
+  background-color: #245852;
+}
+
+.success-story .container {
+  display: flex;
+  align-items: center;
+  max-width: 1530px;
+}
+
+.success-story-content {
+  flex-basis: 580px;
+  padding-right: 30px;
+}
+
+.success-story-title {
+  margin: 0;
+  font-family: "Georgia-Bold", serif;
+  font-size: 50px;
+  color: #ffffff;
+}
+
+.success-story-description {
+  margin: 32px 0 0;
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.success-story-content .btn-primary {
+  margin: 56px 0 0;
+}
+
+.success-story-media {
+  position: relative;
+  flex-grow: 1;
+}
+
+.success-story-video {
+  display: block;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.btn-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.success-story-play {
+  height: 80px;
+  width: 80px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* -------- OUR PRODUCT SECTION -------- */
+
+.our-product {
+  padding: 120px 0 168px;
+}
+
+.our-product .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-content {
+  margin-right: 86px;
+  padding: 0 0 74px 61px;
+  position: relative;
+}
+
+.avatar {
+  display: block;
+  margin: 0;
+  width: 100%;
+  position: relative;
+}
+
+.customized-info {
+  margin: 0;
+  padding: 22px 54px 32px 60px;
+  min-width: 296px;
+  min-height: 294px;
+  border: none;
+  border-radius: 4px;
+  position: absolute;
+  top: 354px;
+  right: 404px;
+  box-shadow: 0 0 20px rgba(175, 172, 172, 0.678);
+  text-align: center;
+  background-color: white;
+}
+
+.customized-title {
+  display: inline-block;
+  padding: 0 4px 8px;
+  margin: 0;
+  border-bottom: 1px solid black;
+  text-align: center;
+  font-size: 16px;
+  color: #000000;
+}
+
+.customized-info-img {
+  display: block;
+  margin: 14px auto 0;
+  min-width: 56px;
+  min-height: 56px;
+  border-radius: 50%;
+}
+
+.first-name {
+  display: block;
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: black;
+}
+
+.list-name {
+  margin: 20px 0 0;
+  font-family: "Georgia-Bold", serif;
+  font-size: 16px;
+  color: #000000;
+}
+
+.customized-list {
+  margin: 0;
+  padding-left: 0;
+  text-align: left;
+}
+
+.customized-item {
+  margin: 16px 0 0;
+  list-style-position: inside;
+  font-size: 10px;
+  color: black;
+}
+
+.our-product-content {
+  flex-basis: 584px;
+}
+
+.our-product-title {
+  margin: 0;
+  font-size: 25px;
+  color: #424242;
+}
+
+.our-product-slogan {
+  margin: 10px 0 0;
+  font-family: "Georgia-Bold", serif;
+  font-size: 50px;
+  color: #01996d;
+}
+
+.our-product-description {
+  margin: 20px 0 0;
+  font-size: 20px;
+  color: #484848;
+}
+
+.our-product-content .btn-primary {
+  margin: 40px 0 0;
+}
+
+/* -------- FOOTER SECTION -------- */
+
+.footer {
+  padding: 95px 0 144px;
+  background-color: #245852;
+}
+
+.footer-logo {
+  font-family: "Avenir Next LT Pro-Bold", sans-serif;
+  font-size: 40px;
+  line-height: 55px;
+  color: #ffffff;
+}
+
+.footer-logo:hover {
+  color: #01996d;
+  text-shadow: 6px 6px 8px black;
+}
+
+.footer-nav {
+  margin: 0;
+}
+
+.footer-nav .nav-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer-nav .nav-item {
+  margin: 60px 0 0;
+}
+
+.footer-nav .nav-link {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.footer-nav .nav-link:hover {
+  color: #01996d;
+  text-shadow: 3px 3px 2px black;
+}

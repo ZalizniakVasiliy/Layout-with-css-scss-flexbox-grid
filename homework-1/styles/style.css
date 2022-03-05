@@ -1,0 +1,45 @@
+h1 {
+  color: white;
+  font-size: 64px;
+  text-align: right;
+  background-color: rgb(0, 140, 255);
+}
+
+img {
+  background-color: rgb(151, 151, 151);
+  width: 200px;
+}
+
+h2 {
+  color: rgb(0, 174, 255);
+}
+
+h3 {
+  font-weight: bold;
+  color: goldenrod;
+}
+
+h4 {
+  font-weight: bolt;
+}
+
+ul {
+  list-style: square;
+  line-height: 0px;
+}
+
+a {
+  font-weight: normal;
+}
+
+span {
+  font-style: italic;
+}
+
+ol {
+  line-height: 0px;
+}
+
+html {
+  cursor: grab;
+}

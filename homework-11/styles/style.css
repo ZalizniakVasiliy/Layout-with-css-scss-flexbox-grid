@@ -1,0 +1,192 @@
+@import url("fonts.css");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Yantramanav-Bold", sans-serif;
+}
+
+.focus {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.focus:hover {
+  opacity: 0.7;
+}
+
+.references-wrapper {
+  display: grid;
+  justify-self: center;
+  align-self: end;
+  margin-bottom: 30px;
+}
+
+.reference-category {
+  margin: 0 auto;
+  padding: 0 0 2px;
+}
+
+.name:hover {
+  color: #ff0000;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  color: #00a72a;
+  transition: all 0.3s ease;
+}
+
+.grid-gallery {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  grid-template-rows: repeat(3, 285px);
+  grid-gap: 4px;
+  grid-template-areas:
+    "slider-layout  gallery-layout  gallery-layout  split-layout"
+    "apple-store    gallery-layout  gallery-layout  split-layout"
+    "nyc-conference nyc-conference  with-sidebar    morning-activity";
+}
+
+.slider-layout {
+  grid-area: slider-layout;
+  background-image: url(../images/angle.jpg);
+}
+
+.slider-layout,
+.apple-store,
+.gallery-layout,
+.split-layout,
+.nyc-conference,
+.with-sidebar,
+.morning-activity {
+  display: grid;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.name {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.name,
+.link {
+  display: inline-block;
+  margin: 0;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.apple-store {
+  grid-area: apple-store;
+  background-image: url(../images/apple.jpg);
+}
+
+.gallery-layout {
+  grid-area: gallery-layout;
+  background-image: url(../images/alone.jpg);
+}
+
+.split-layout {
+  grid-area: split-layout;
+  background-image: url(../images/person.jpg);
+}
+
+.nyc-conference {
+  grid-area: nyc-conference;
+  background-image: url(../images/new-york.jpg);
+}
+
+.with-sidebar {
+  grid-area: with-sidebar;
+  background-image: url(../images/knitting.jpg);
+}
+
+.morning-activity {
+  grid-area: morning-activity;
+  background-image: url(../images/photo.jpg);
+}
+
+.slider-layout .name,
+.apple-store .name,
+.split-layout .name,
+.with-sidebar .name,
+.morning-activity .name {
+  font-size: 12.24px;
+}
+
+.slider-layout .link,
+.apple-store .link,
+.split-layout .link,
+.with-sidebar .link,
+.morning-activity .link {
+  font-size: 21.42px;
+}
+
+.gallery-layout .name,
+.nyc-conference .name {
+  font-size: 14.4px;
+}
+
+.gallery-layout .link,
+.nyc-conference .link {
+  font-size: 37.8px;
+}
+
+@media only screen and (max-width: 681px) {
+  .grid-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1px;
+    grid-template-areas:
+      "slider-layout"
+      "gallery-layout"
+      "split-layout"
+      "apple-store"
+      "nyc-conference"
+      "with-sidebar"
+      "morning-activity";
+  }
+
+  .slider-layout,
+  .apple-store,
+  .gallery-layout,
+  .split-layout,
+  .nyc-conference,
+  .with-sidebar,
+  .morning-activity {
+    min-height: 285px;
+    min-width: 285px;
+  }
+
+  .references-wrapper {
+    margin-bottom: 25px;
+  }
+
+  .grid-gallery .name {
+    font-size: 10px;
+  }
+
+  .grid-gallery .link {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,196 @@
+/*
+  1. Перепишите стили ниже используя вложенность:
+*/
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: tomato;
+}
+
+/*
+  1. Ваш ответ:
+
+*/
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+
+      a {
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+
+        // Selector Specificity: (0, 1, 2) - для примера ниже. Этот предпочтительнее.
+
+        // a:hover {
+        //   text-decoration: underline;
+        //   color: tomato;
+        // }
+
+        // Selector Specificity: (0, 1, 0) - для примера ниже имеет
+        //  более низкий приоритет, чем у вышеуказанного селектора
+
+        &:hover {
+          text-decoration: underline;
+          color: tomato;
+        }
+      }
+    }
+  }
+}
+/* ==================================================== */
+
+/*
+  2.1 Перепишите стили ниже используя @extend и плейсхолдер
+  2.2 Создайте отдельный файл (модуль) "_colors.scss",
+      запишите в него переменные с значениями цветов green, red и yellow,
+      используйте эти переменные в свойствах border-color
+*/
+.success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  border-color: green;
+}
+
+.error {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  border-color: red;
+}
+
+.warning {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  border-color: yellow;
+}
+
+/*
+  2. Ваш ответ:
+*/
+@import "placeholders";
+@import "colors";
+
+.success {
+  @extend %btn-default;
+  border-color: $successColor;
+}
+
+.error {
+  @extend %btn-default;
+  border-color: $errorColor;
+}
+
+.warning {
+  @extend %btn-default;
+  border-color: $warningColor;
+}
+// /* ==================================================== */
+
+/*
+  3. Перепишите стили ниже используя цикл @for от 1го до 5ти,
+   и внутри него условные конструкци @if, @else if, @else:
+*/
+.block-1::before {
+  content: "the first one";
+}
+
+.block-2::before {
+  content: "2";
+}
+
+.block-3::before {
+  content: "3";
+}
+
+.block-4::before {
+  content: "4";
+}
+
+.block-5::before {
+  content: "the last one";
+}
+
+/*
+  3. Ваш ответ:
+*/
+.block {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  background-color: hsl(156, 100%, 50%);
+  font-size: 24px;
+}
+
+@for $i from 1 through 5 {
+  $textContent: "#{$i}";
+  .block-#{$i} {
+    margin-bottom: 10px;
+
+    @if $i > 0 and $i < 2 {
+      $textContent: "the first one";
+    } @else if $i > 1 and $i < 5 {
+      $textContent: $textContent;
+    } @else {
+      $textContent: "the last one";
+    }
+    &::before {
+      content: $textContent;
+    }
+  }
+}
+// /* ==================================================== */
+
+// /*
+//   4. Создайте отдельный файл (модуль) "_mixins.scss",
+//   4.1 Добавьте в него миксин container,
+//       который будет добавлять максимальную ширину, центрирование (margin: 0 auto) и паддинги справа/слева
+//       который в качестве аргументов будет принимать max-width ($mw) и padding-и для левой и правой строны ($px),
+//       задайте аргументам в качестве значений по-умолчанию: max-width 1140px, padding-и 15px
+// */
+
+// /* До компиляции */
+// .container {
+//   @include container(1200px, 20px);
+// }
+
+// /* После компиляции */
+// .container {
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   padding: 0 20px;
+// }
+
+/*
+  4. Ваш ответ:
+*/
+@import "mixins";
+
+.container {
+  @include container(1200px, 20px);
+}
+// /* ==================================================== */

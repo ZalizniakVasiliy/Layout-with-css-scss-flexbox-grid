@@ -1,0 +1,118 @@
+@import url("fonts.css");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* -------------------------- FORM --------------------------  */
+
+.connection-form {
+  margin: 80px auto;
+  max-width: 600px;
+  background-color: #efefef;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* -------------------------- HEADER --------------------------  */
+
+.connection-heading {
+  margin: 0;
+  width: 100%;
+  padding: 28px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #286782;
+}
+
+.connection-heading .form-title {
+  margin: 0;
+  font-family: "Open Sans Bold", sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.connection-heading .reset-btn {
+  border: none;
+  position: absolute;
+  right: 24px;
+  font-size: 22px;
+  color: white;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.connection-heading .reset-btn:hover {
+  color: red;
+}
+
+/* -------------------------- FORM FIELDS --------------------------  */
+
+.form-field-data {
+  padding: 40px 60px;
+}
+
+.form-field:not(:first-child) {
+  margin-top: 20px;
+}
+
+.form-field-input {
+  display: block;
+  width: 100%;
+  padding: 11px 15px;
+  border: 1px solid #cecece;
+  border-radius: 6px 6px 0px 0px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #444444;
+}
+
+.form-field-input:focus {
+  border: 1px solid rgb(250, 6, 6);
+  outline: none;
+}
+
+.form-field-text {
+  display: block;
+  width: 100%;
+  padding: 11px 15px 69px;
+  border: 1px solid #cecece;
+  border-radius: 6px 6px 0px 0px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #444444;
+}
+
+.form-field-text:focus {
+  border: 1px solid rgb(250, 6, 6);
+  outline: none;
+}
+
+.form-btn--send {
+  display: block;
+  margin: 0 auto;
+  min-width: 180px;
+  min-height: 60px;
+  border: none;
+  border-radius: 6px;
+  font-family: "Open Sans Bold", sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  color: #ffffff;
+  background-color: #286782;
+  cursor: pointer;
+}
+
+.form-btn--send:hover {
+  background-color: rgb(8, 87, 8);
+}

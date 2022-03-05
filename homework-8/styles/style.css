@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+table.nutrient {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 852px;
+  table-layout: auto;
+}
+
+.nutrient-title {
+  margin: 16px 0;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: left;
+}
+
+.nutrient-title-name {
+  font-weight: bold;
+}
+
+.number-row {
+  background-color: #9ac5bf;
+}
+
+.nutrient-header {
+  background-color: #c0e7e9;
+}
+
+.nutrient-header .gender {
+  padding: 4px 0 0;
+  background-color: #d7cfe9;
+}
+
+.nutrient th {
+  border: 2px solid;
+  padding: 9px;
+}
+
+.nutrient-content {
+  text-align: center;
+}
+
+.nutrient-content tr:hover {
+  background-color: #dad5d5;
+}
+
+.nutrient-content td:hover {
+  background-color: #868686;
+}
+
+.nutrient td {
+  border: 2px solid;
+}
+
+td:empty::after {
+  content: "-";
+}
+
+.first-work-group,
+.second-work-group,
+.third-work-group,
+.fourth-work-group,
+.fifth-work-group {
+  padding-left: 32px;
+}
